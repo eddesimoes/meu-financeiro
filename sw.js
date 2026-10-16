@@ -1,5 +1,5 @@
 
-const CACHE = 'meu-financeiro-v5-premium-v1';
+const CACHE = 'meu-financeiro-v6-mobile-fixes-v1';
 
 const ASSETS = [
   './',
