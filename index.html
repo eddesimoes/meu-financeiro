@@ -7,12 +7,178 @@
 <title>Meu Financeiro 2.0</title>
 <style>
 :root{--bg:#f3f7f4;--card:#fff;--ink:#18271f;--muted:#65756b;--green:#176b45;--pale:#e0f3e7;--line:#e0e9e3;--red:#b83d3d;--shadow:0 4px 18px #163b2710}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:90px}header{background:linear-gradient(135deg,#12372a,#1d704a);color:white;padding:22px 16px 20px;border-radius:0 0 24px 24px}.wrap{max-width:800px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{font-weight:850;font-size:21px}.sub{font-size:12px;opacity:.8}.hero{margin-top:23px}.hero small{opacity:.8}.balance{font-size:34px;font-weight:850;letter-spacing:-1px;margin:4px 0 14px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{padding:11px;background:#ffffff19;border:1px solid #ffffff20;border-radius:14px}.stat span{display:block;font-size:12px;opacity:.8}.stat b{display:block;font-size:16px;margin-top:3px}main{max-width:800px;margin:auto;padding:15px 12px}.page{display:none}.page.active{display:block}.head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:5px 0 13px}.head h2{margin:0;font-size:21px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:12px;box-shadow:var(--shadow)}h3{font-size:16px;margin:0 0 12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini span{font-size:12px;color:var(--muted)}.mini b{display:block;font-size:19px;margin-top:5px}.muted{color:var(--muted)}.notice{font-size:12px;line-height:1.5;background:#f3f7f4;color:#53675b;border-radius:11px;padding:11px;margin-top:10px}button,.btn{border:0;background:var(--green);color:white;padding:11px 13px;border-radius:11px;font:inherit;font-weight:700;cursor:pointer}.secondary{background:var(--pale);color:var(--green)}.ghost{background:#eff3f0;color:var(--ink)}.danger{background:#fbe8e8;color:var(--red)}.sm{font-size:12px;padding:7px 9px}.actions{display:flex;gap:7px;flex-wrap:wrap}label{display:block;font-size:13px;font-weight:650;margin:10px 0 5px}input,select{width:100%;padding:11px;border:1px solid #d4e0d8;border-radius:10px;background:white;font:inherit;color:var(--ink)}.two{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}.full{grid-column:1/-1}.item{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}.ico{width:40px;height:40px;display:grid;place-items:center;background:#edf5ef;border-radius:12px;font-size:19px;flex-shrink:0}.details{flex:1;min-width:0}.details b{display:block;overflow-wrap:anywhere}.details small{color:var(--muted)}.right{text-align:right;white-space:nowrap;font-weight:800}.pos{color:var(--green)}.neg{color:var(--red)}.empty{text-align:center;padding:20px 5px;color:var(--muted)}.bar{height:8px;background:#e9efeb;border-radius:10px;overflow:hidden;margin-top:7px}.bar div{height:100%;background:#39875f}.pill{font-size:11px;background:#edf4ef;color:#42634f;padding:4px 8px;border-radius:99px}.hidden{display:none!important}nav{position:fixed;bottom:0;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:2px;background:#fffffff0;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 3px calc(6px + env(safe-area-inset-bottom))}nav button{flex:1;max-width:120px;background:transparent;color:var(--muted);font-size:10px;padding:6px 2px}nav button span{display:block;font-size:19px}nav button.active{background:var(--pale);color:var(--green)}.install{display:none}@media(min-width:650px){header{padding:26px;border-radius:0 0 28px 28px}.stats{grid-template-columns:repeat(4,1fr)}main{padding:22px}nav{left:calc(50% - 400px);right:calc(50% - 400px);border-radius:16px 16px 0 0}.grid{grid-template-columns:repeat(4,1fr)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:90px}header{background:linear-gradient(135deg,#12372a,#1d704a);color:white;padding:22px 16px 20px;border-radius:0 0 24px 24px}.wrap{max-width:800px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{font-weight:850;font-size:21px}.sub{font-size:12px;opacity:.8}.hero{margin-top:23px}.hero small{opacity:.8}.balance{font-size:34px;font-weight:850;letter-spacing:-1px;margin:4px 0 14px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{padding:11px;background:#ffffff19;border:1px solid #ffffff20;border-radius:14px}.stat span{display:block;font-size:12px;opacity:.8}.stat b{display:block;font-size:16px;margin-top:3px}main{max-width:800px;margin:auto;padding:15px 12px}.page{display:none}.page.active{display:block}.head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:5px 0 13px}.head h2{margin:0;font-size:21px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:12px;box-shadow:var(--shadow)}h3{font-size:16px;margin:0 0 12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini span{font-size:12px;color:var(--muted)}.mini b{display:block;font-size:19px;margin-top:5px}.muted{color:var(--muted)}.notice{font-size:12px;line-height:1.5;background:#f3f7f4;color:#53675b;border-radius:11px;padding:11px;margin-top:10px}button,.btn{border:0;background:var(--green);color:white;padding:11px 13px;border-radius:11px;font:inherit;font-weight:700;cursor:pointer}.secondary{background:var(--pale);color:var(--green)}.ghost{background:#eff3f0;color:var(--ink)}.danger{background:#fbe8e8;color:var(--red)}.sm{font-size:12px;padding:7px 9px}.actions{display:flex;gap:7px;flex-wrap:wrap}label{display:block;font-size:13px;font-weight:650;margin:10px 0 5px}input,select{width:100%;padding:11px;border:1px solid #d4e0d8;border-radius:10px;background:white;font:inherit;color:var(--ink)}.two{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}.full{grid-column:1/-1}.item{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}.ico{width:40px;height:40px;display:grid;place-items:center;background:#edf5ef;border-radius:12px;font-size:19px;flex-shrink:0}.details{flex:1;min-width:0}.details b{display:block;overflow-wrap:anywhere}.details small{color:var(--muted)}.right{text-align:right;white-space:nowrap;font-weight:800}.pos{color:var(--green)}.neg{color:var(--red)}.empty{text-align:center;padding:20px 5px;color:var(--muted)}.bar
+/* Dashboard renovado */
+#p-home .card {
+  border-radius: 20px;
+  padding: 17px;
+  box-shadow: 0 6px 24px rgba(18, 55, 42, .055);
+}
+
+#p-home .mini {
+  min-height: 94px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#p-home .mini b {
+  font-size: clamp(17px, 4vw, 21px);
+  overflow-wrap: anywhere;
+}
+
+.chart-layout {
+  display: grid;
+  grid-template-columns: minmax(105px, 145px) 1fr;
+  align-items: center;
+  gap: 18px;
+}
+
+.donut {
+  width: 100%;
+  max-width: 145px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+}
+
+.donut::after {
+  content: "";
+  position: absolute;
+  inset: 25%;
+  background: var(--card);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.donut-center strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.donut-center small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 9px 0;
+  font-size: 12px;
+  min-width: 0;
+}
+
+.legend-item .legend-name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.legend-item strong {
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.trend-row {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 9px;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.trend-month {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.trend-bars {
+  display: grid;
+  gap: 5px;
+}
+
+.trend-track {
+  height: 10px;
+  border-radius: 99px;
+  background: #edf1ee;
+  overflow: hidden;
+}
+
+.trend-fill {
+  height: 100%;
+  border-radius: inherit;
+  min-width: 0;
+}
+
+.trend-income {
+  background: #23875a;
+}
+
+.trend-expense {
+  background: #e08b62;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 380px) {
+  .chart-layout {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  #p-home .card {
+    padding: 13px;
+  }
+}
+{height:8px;background:#e9efeb;border-radius:10px;overflow:hidden;margin-top:7px}.bar div{height:100%;background:#39875f}.pill{font-size:11px;background:#edf4ef;color:#42634f;padding:4px 8px;border-radius:99px}.hidden{display:none!important}nav{position:fixed;bottom:0;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:2px;background:#fffffff0;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 3px calc(6px + env(safe-area-inset-bottom))}nav button{flex:1;max-width:120px;background:transparent;color:var(--muted);font-size:10px;padding:6px 2px}nav button span{display:block;font-size:19px}nav button.active{background:var(--pale);color:var(--green)}.install{display:none}@media(min-width:650px){header{padding:26px;border-radius:0 0 28px 28px}.stats{grid-template-columns:repeat(4,1fr)}main{padding:22px}nav{left:calc(50% - 400px);right:calc(50% - 400px);border-radius:16px 16px 0 0}.grid{grid-template-columns:repeat(4,1fr)}}
 </style></head>
 <body>
-<header><div class="wrap"><div class="top"><div><div class="brand">🌿 Meu Financeiro 2.0</div><div class="sub" id="monthName">Gestão financeira pessoal</div></div><button class="secondary sm" onclick="page('settings')">⚙️ Definições</button></div><div class="hero"><small>Saldo deste mês</small><div class="balance" id="balance">€ 0,00</div><div class="stats"><div class="stat"><span>Rendimentos</span><b id="income">€ 0,00</b></div><div class="stat"><span>Despesas</span><b id="expenses">€ 0,00</b></div><div class="stat"><span>Poupado</span><b id="saved">€ 0,00</b></div><div class="stat"><span>Dívida em aberto</span><b id="debtTotal">€ 0,00</b></div></div></div></div></header>
+<header><div class="wrap"><div class="top"><div><div class="brand">🌿 Meu Financeiro 2.0</div><div class="sub" id="monthName">Gestão financeira pessoal</div></div><button class="secondary sm" onclick="page('settings')">⚙️ Definições</button></div><div class="hero"><small>Saldo do mês selecionado</small><div class="balance" id="balance">€ 0,00</div><div class="stats"><div class="stat"><span>Rendimentos</span><b id="income">€ 0,00</b></div><div class="stat"><span>Despesas</span><b id="expenses">€ 0,00</b></div><div class="stat"><span>Poupado</span><b id="saved">€ 0,00</b></div><div class="stat"><span>Dívida em aberto</span><b id="debtTotal">€ 0,00</b></div></div></div></div></header>
 <main>
-<section class="page active" id="p-home"><div class="head"><h2>Visão geral</h2><span class="pill" id="monthPill"></span></div><div class="grid"><div class="card mini"><span>Contas pendentes</span><b id="pending">0</b></div><div class="card mini"><span>Investimentos</span><b id="investTotal">€ 0,00</b></div></div><div class="card"><h3>Despesas por categoria</h3><div id="chart"></div></div><div class="card"><div class="head"><h3 style="margin:0">Movimentos recentes</h3><button class="secondary sm" onclick="page('moves')">Ver todos</button></div><div id="recent"></div></div><div class="card"><h3>Acesso rápido</h3><div class="actions"><button onclick="openMove('expense')">＋ Despesa</button><button class="secondary" onclick="openMove('income')">＋ Rendimento</button><button class="ghost" onclick="page('bills')">Contas</button></div></div></section>
+<section class="page active" id="p-home"><div class="head">
+  <h2>Visão geral</h2>
+  <input id="dashMonth" type="month" aria-label="Mês do dashboard"
+         onchange="render()" style="width:auto;max-width:155px">
+</div>
+<div class="pill" id="monthPill" style="display:inline-block;margin-bottom:12px"></div><div class="grid"><div class="card mini"><span>Contas pendentes</span><b id="pending">0</b></div><div class="card mini"><span>Investimentos</span><b id="investTotal">€ 0,00</b></div></div><div class="card">
+  <h3>Despesas por categoria</h3>
+  <div id="chart"></div>
+</div>
+
+<div class="card">
+  <h3>Receitas vs. despesas</h3>
+  <p class="muted" style="font-size:12px;margin-top:-5px">
+    Comparação dos seis meses até ao mês selecionado
+  </p>
+  <div id="trendChart"></div>
+</div><div class="card"><div class="head"><h3 style="margin:0">Movimentos recentes</h3><button class="secondary sm" onclick="page('moves')">Ver todos</button></div><div id="recent"></div></div><div class="card"><h3>Acesso rápido</h3><div class="actions"><button onclick="openMove('expense')">＋ Despesa</button><button class="secondary" onclick="openMove('income')">＋ Rendimento</button><button class="ghost" onclick="page('bills')">Contas</button></div></div></section>
 <section class="page" id="p-moves"><div class="head"><h2>Movimentos</h2><button onclick="openMove()">＋ Adicionar</button></div><div class="card hidden" id="moveCard"><h3 id="moveTitle">Novo movimento</h3><form id="moveForm"><input id="mid" type="hidden"><div class="two"><div><label>Tipo</label><select id="mtype"><option value="expense">Despesa</option><option value="income">Rendimento</option></select></div><div><label>Data</label><input id="mdate" type="date" required></div><div class="full"><label>Descrição</label><input id="mdesc" required maxlength="100" placeholder="Ex.: supermercado, salário"></div><div><label>Valor (€)</label><input id="mamount" type="number" min=".01" step=".01" required></div><div><label>Categoria</label><select id="mcat"></select></div><div class="full"><label>Conta (opcional)</label><input id="maccount" placeholder="Ex.: Revolut, dinheiro"></div></div><div class="actions" style="margin-top:13px"><button>Guardar</button><button type="button" class="ghost" onclick="closeMove()">Cancelar</button></div></form></div><div class="card"><div class="two"><div><label>Tipo</label><select id="filterType" onchange="renderMoves()"><option value="all">Todos</option><option value="expense">Despesas</option><option value="income">Rendimentos</option></select></div><div><label>Mês</label><input id="filterMonth" type="month" onchange="renderMoves()"></div></div><div id="movesList"></div></div></section>
 <section class="page" id="p-bills"><div class="head"><h2>Contas a pagar</h2><button onclick="openForm('bill')">＋ Adicionar</button></div><div class="card hidden" id="billFormCard"><h3>Nova conta</h3><form id="billForm"><label>Descrição</label><input id="bdesc" required><div class="two"><div><label>Valor (€)</label><input id="bamount" type="number" min=".01" step=".01" required></div><div><label>Vencimento</label><input id="bdue" type="date" required></div></div><label>Recorrência</label><select id="brec"><option>Não recorrente</option><option>Mensal</option><option>Anual</option></select><div class="actions" style="margin-top:12px"><button>Guardar</button><button type="button" class="ghost" onclick="closeForm('bill')">Cancelar</button></div></form></div><div class="card" id="billsList"></div></section>
 <section class="page" id="p-debts"><div class="head"><h2>Dívidas</h2><button onclick="openForm('debt')">＋ Adicionar</button></div><div class="card hidden" id="debtFormCard"><h3>Nova dívida</h3><form id="debtForm"><label>Credor / descrição</label><input id="ddesc" required><div class="two"><div><label>Total (€)</label><input id="damount" type="number" min=".01" step=".01" required></div><div><label>Já pago (€)</label><input id="dpaid" type="number" min="0" step=".01" value="0" required></div></div><label>Prestação mensal (opcional)</label><input id="dpayment" type="number" min="0" step=".01"><div class="actions" style="margin-top:12px"><button>Guardar</button><button type="button" class="ghost" onclick="closeForm('debt')">Cancelar</button></div></form></div><div class="card" id="debtsList"></div></section>
@@ -37,8 +203,198 @@ function renderBills(){$('billsList').innerHTML=db.bills.length?[...db.bills].so
 function renderDebts(){$('debtsList').innerHTML=db.debts.length?db.debts.map(d=>{let left=Math.max(0,d.amount-d.paid),pct=Math.min(100,d.paid/d.amount*100);return `<div class="item"><div class="ico">◈</div><div class="details"><b>${esc(d.description)}</b><small>Pago ${eur(d.paid)} de ${eur(d.amount)}${d.payment?' · Prestação '+eur(d.payment)+'/mês':''}</small><div class="bar"><div style="width:${pct}%"></div></div></div><div><div class="right neg">${eur(left)}</div><div class="actions" style="margin-top:5px"><button class="secondary sm" onclick="payDebt('${d.id}')">Pagar</button><button class="danger sm" onclick="del('debts','${d.id}')">×</button></div></div></div>`}).join(''):'<div class="empty">Ainda não há dívidas registadas.</div>'}function payDebt(id){let d=db.debts.find(x=>x.id===id),n=prompt('Quanto pagaste? Em aberto: '+eur(d.amount-d.paid));if(n===null)return;let v=Number(n.replace(',','.'));if(!(v>0)||v>d.amount-d.paid)return alert('Valor inválido.');d.paid+=v;save()}
 function renderSavings(){$('savingsList').innerHTML=db.savings.length?db.savings.map(s=>{let p=Math.min(100,s.current/s.target*100);return `<div class="item"><div class="ico">◎</div><div class="details"><b>${esc(s.description)}</b><small>${eur(s.current)} de ${eur(s.target)}${s.date?' · '+esc(s.date):''}</small><div class="bar"><div style="width:${p}%"></div></div><small>${p.toFixed(0)}% concluído</small></div><div><button class="secondary sm" onclick="addSaving('${s.id}')">＋ Valor</button><div style="margin-top:5px"><button class="danger sm" onclick="del('savings','${s.id}')">Apagar</button></div></div></div>`}).join(''):'<div class="empty">Cria o primeiro objetivo de poupança.</div>'}function addSaving(id){let s=db.savings.find(x=>x.id===id),n=prompt('Quanto queres acrescentar? (€)');if(n===null)return;let v=Number(n.replace(',','.'));if(!(v>0))return alert('Valor inválido.');s.current=Math.min(s.target,s.current+v);save()}
 function renderInvest(){$('investList').innerHTML=db.investments.length?db.investments.map(i=>row('↗',i.description,`${i.institution||'Instituição não indicada'} · Investido ${eur(i.cost)}`,eur(i.value),i.value>=i.cost?'pos':'neg',`Resultado: ${i.value>=i.cost?'+':''}${eur(i.value-i.cost)} <button class="danger sm" onclick="del('investments','${i.id}')">Apagar</button>`)).join(''):'<div class="empty">Ainda não há investimentos registados.</div>'}
-function renderChart(m){let totals={};db.transactions.filter(t=>t.type==='expense'&&t.date.startsWith(m)).forEach(t=>totals[t.category]=(totals[t.category]||0)+t.amount);let a=Object.entries(totals).sort((x,y)=>y[1]-x[1]),max=Math.max(1,...a.map(x=>x[1]));$('chart').innerHTML=a.length?a.map(([k,v])=>`<div style="display:flex;gap:8px;align-items:center;margin:11px 0"><small style="width:100px;color:var(--muted)">${esc(k)}</small><div class="bar" style="flex:1;margin:0"><div style="width:${v/max*100}%"></div></div><b style="width:78px;text-align:right;font-size:12px">${eur(v)}</b></div>`).join(''):'<div class="empty">Regista despesas para ver o gráfico.</div>'}
-function render(){let m=month(),a=db.transactions.filter(t=>t.date.startsWith(m)),inc=a.filter(t=>t.type==='income').reduce((s,t)=>s+t.amount,0),exp=a.filter(t=>t.type==='expense').reduce((s,t)=>s+t.amount,0);$('monthName').textContent=new Date().toLocaleDateString('pt-PT',{month:'long',year:'numeric'});$('monthPill').textContent=new Date().toLocaleDateString('pt-PT',{month:'long'});$('balance').textContent=eur(inc-exp);$('income').textContent=eur(inc);$('expenses').textContent=eur(exp);$('saved').textContent=eur(db.savings.reduce((s,x)=>s+x.current,0));$('debtTotal').textContent=eur(db.debts.reduce((s,d)=>s+Math.max(0,d.amount-d.paid),0));$('pending').textContent=db.bills.filter(b=>!b.paid).length;$('investTotal').textContent=eur(db.investments.reduce((s,i)=>s+i.value,0));$('filterMonth').value=$('filterMonth').value||m;renderMoves();renderBills();renderDebts();renderSavings();renderInvest();renderChart(m);let recent=[...db.transactions].sort((x,y)=>y.date.localeCompare(x.date)).slice(0,5);$('recent').innerHTML=recent.length?recent.map(t=>row(t.type==='income'?'↗':'↘',t.description,`${t.date} · ${t.category}`,`${t.type==='income'?'+':'−'} ${eur(t.amount)}`,t.type==='income'?'pos':'neg')).join(''):'<div class="empty">Adiciona o teu primeiro movimento.</div>'}
+
+function renderChart(m) {
+  const palette = [
+    '#23875a', '#e08b62', '#5685c5', '#a17ac4',
+    '#d1a33e', '#47a7a0', '#d66d8b', '#7c8d59',
+    '#8b96a8', '#bd7650', '#6c78b8'
+  ];
+
+  const totals = {};
+  db.transactions
+    .filter(t => t.type === 'expense' && t.date.startsWith(m))
+    .forEach(t => {
+      const category = t.category || 'Outros';
+      totals[category] = (totals[category] || 0) + Number(t.amount || 0);
+    });
+
+  const entries = Object.entries(totals)
+    .filter(([, value]) => value > 0)
+    .sort((a, b) => b[1] - a[1]);
+
+  const total = entries.reduce((sum, [, value]) => sum + value, 0);
+
+  if (!entries.length || total <= 0) {
+    $('chart').innerHTML =
+      '<div class="empty">Ainda não há despesas neste mês.</div>';
+    return;
+  }
+
+  let cursor = 0;
+  const segments = entries.map(([name, value], i) => {
+    const start = cursor;
+    cursor += value / total * 100;
+    return `${palette[i % palette.length]} ${start}% ${cursor}%`;
+  });
+
+  const legend = entries.map(([name, value], i) => `
+    <div class="legend-item">
+      <span class="legend-dot"
+        style="background:${palette[i % palette.length]}"></span>
+      <span class="legend-name">${esc(name)}</span>
+      <strong>${eur(value)}</strong>
+    </div>
+  `).join('');
+
+  $('chart').innerHTML = `
+    <div class="chart-layout">
+      <div class="donut"
+        role="img"
+        aria-label="Despesas totais: ${esc(eur(total))}"
+        style="background:conic-gradient(${segments.join(',')})">
+        <div class="donut-center">
+          <small>Total</small>
+          <strong>${eur(total)}</strong>
+        </div>
+      </div>
+      <div>${legend}</div>
+    </div>
+  `;
+}
+  
+function renderTrend(selectedMonth) {
+  const [year, monthNumber] = selectedMonth.split('-').map(Number);
+
+  const months = [];
+  for (let offset = 5; offset >= 0; offset--) {
+    const date = new Date(year, monthNumber - 1 - offset, 15);
+    const key = [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, '0')
+    ].join('-');
+
+    months.push({
+      key,
+      label: date.toLocaleDateString('pt-PT', { month: 'short' })
+        .replace('.', '')
+    });
+  }
+
+  const data = months.map(item => {
+    const transactions = db.transactions.filter(t =>
+      t.date.startsWith(item.key)
+    );
+
+    return {
+      ...item,
+      income: transactions
+        .filter(t => t.type === 'income')
+        .reduce((sum, t) => sum + Number(t.amount || 0), 0),
+      expense: transactions
+        .filter(t => t.type === 'expense')
+        .reduce((sum, t) => sum + Number(t.amount || 0), 0)
+    };
+  });
+
+  const max = Math.max(
+    1,
+    ...data.flatMap(item => [item.income, item.expense])
+  );
+
+  $('trendChart').innerHTML = data.map(item => `
+    <div class="trend-row">
+      <span class="trend-month">${esc(item.label)}</span>
+      <div class="trend-bars">
+        <div class="trend-track"
+             title="Receitas: ${esc(eur(item.income))}">
+          <div class="trend-fill trend-income"
+               style="width:${item.income / max * 100}%"></div>
+        </div>
+        <div class="trend-track"
+             title="Despesas: ${esc(eur(item.expense))}">
+          <div class="trend-fill trend-expense"
+               style="width:${item.expense / max * 100}%"></div>
+        </div>
+        <small class="muted">
+          +${eur(item.income)} · −${eur(item.expense)}
+        </small>
+      </div>
+    </div>
+  `).join('') + `
+    <div class="chart-legend">
+      <span>🟢 Receitas</span>
+      <span>🟠 Despesas</span>
+    </div>
+  `;
+}
+
+
+function render() {
+  const currentMonth = month();
+  if ($('dashMonth')) {
+    $('dashMonth').value = $('dashMonth').value || currentMonth;
+  }
+
+  const m = $('dashMonth')?.value || currentMonth;
+  const selectedDate = new Date(m + '-15T12:00:00');
+  const transactions = db.transactions.filter(t => t.date.startsWith(m));
+
+  const inc = transactions
+    .filter(t => t.type === 'income')
+    .reduce((sum, t) => sum + Number(t.amount || 0), 0);
+
+  const exp = transactions
+    .filter(t => t.type === 'expense')
+    .reduce((sum, t) => sum + Number(t.amount || 0), 0);
+
+  $('monthName').textContent = selectedDate.toLocaleDateString(
+    'pt-PT', { month: 'long', year: 'numeric' }
+  );
+
+  $('monthPill').textContent = selectedDate.toLocaleDateString(
+    'pt-PT', { month: 'long', year: 'numeric' }
+  );
+
+  $('balance').textContent = eur(inc - exp);
+  $('income').textContent = eur(inc);
+  $('expenses').textContent = eur(exp);
+  $('saved').textContent = eur(
+    db.savings.reduce((sum, item) => sum + Number(item.current || 0), 0)
+  );
+  $('debtTotal').textContent = eur(
+    db.debts.reduce((sum, debt) =>
+      sum + Math.max(0, Number(debt.amount || 0) - Number(debt.paid || 0)), 0)
+  );
+  $('pending').textContent = db.bills.filter(bill => !bill.paid).length;
+  $('investTotal').textContent = eur(
+    db.investments.reduce((sum, item) => sum + Number(item.value || 0), 0)
+  );
+
+  $('filterMonth').value = $('filterMonth').value || currentMonth;
+
+  renderMoves();
+  renderBills();
+  renderDebts();
+  renderSavings();
+  renderInvest();
+  renderChart(m);
+  renderTrend(m);
+
+  const recent = [...db.transactions]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 5);
+
+  $('recent').innerHTML = recent.length
+    ? recent.map(t => row(
+        t.type === 'income' ? '↗' : '↘',
+        t.description,
+        `${t.date} · ${t.category}`,
+        `${t.type === 'income' ? '+' : '−'} ${eur(t.amount)}`,
+        t.type === 'income' ? 'pos' : 'neg'
+      )).join('')
+    : '<div class="empty">Adiciona o teu primeiro movimento.</div>';
+}
 function backup(){let a=document.createElement('a'),u=URL.createObjectURL(new Blob([JSON.stringify(db,null,2)],{type:'application/json'}));a.href=u;a.download='meu-financeiro-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}function restore(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d.transactions))throw 0;if(!confirm('Substituir os dados atuais?'))return;db={transactions:[],bills:[],debts:[],savings:[],investments:[],...d};save();alert('Cópia restaurada.')}catch(x){alert('Ficheiro inválido.')}e.target.value=''};r.readAsText(f)}
 function importCSV(){let f=$('csvFile').files[0];if(!f)return alert('Escolhe um ficheiro CSV.');let r=new FileReader();r.onload=()=>{let lines=String(r.result).replace(/^﻿/,'').split(/\r?\n/).filter(x=>x.trim());if(lines.length<2)return alert('CSV sem dados.');function split(line){let a=[],s='',q=false;for(let i=0;i<line.length;i++){let c=line[i];if(c==='"')q=!q;else if((c===','||c===';')&&!q){a.push(s.trim());s=''}else s+=c}a.push(s.trim());return a}let h=split(lines.shift()).map(x=>x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')),ix=names=>h.findIndex(x=>names.includes(x)),di=ix(['date','data']),de=ix(['description','descricao','details','memo','merchant']),ai=ix(['amount','valor','montante']),ti=ix(['type','tipo']),ci=ix(['category','categoria']);if(di<0||de<0||ai<0)return alert('Colunas obrigatórias: date,description,amount.');let n=0;for(let line of lines){let c=split(line),raw=(c[ai]||'').replace(/[€\s]/g,'').replace(/\.(?=\d{3}(?:,|$))/g,'').replace(',','.');let v=Number(raw);if(!Number.isFinite(v)||v===0)continue;let d=c[di]||'';if(/^\d{2}\/\d{2}\/\d{4}$/.test(d)){let p=d.split('/');d=`${p[2]}-${p[1]}-${p[0]}`}if(!/^\d{4}-\d{2}-\d{2}$/.test(d))continue;let type=(c[ti]||'').toLowerCase();type=type.includes('income')||type.includes('rendimento')||type.includes('credito')||type.includes('crédito')?'income':'expense';db.transactions.push({id:crypto.randomUUID(),type,date:d,description:c[de]||'Importado',amount:Math.abs(v),category:c[ci]||'Outros',account:'CSV importado'});n++}save();alert(`${n} movimento(s) importado(s). Confirma os tipos e valores.`);$('csvFile').value=''};r.readAsText(f,'utf-8')}
 function wipe(){if(confirm('Apagar definitivamente os dados guardados neste navegador?')){db={transactions:[],bills:[],debts:[],savings:[],investments:[]};save()}}
