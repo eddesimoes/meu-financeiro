@@ -158,6 +158,167 @@
   }
 }
 {height:8px;background:#e9efeb;border-radius:10px;overflow:hidden;margin-top:7px}.bar div{height:100%;background:#39875f}.pill{font-size:11px;background:#edf4ef;color:#42634f;padding:4px 8px;border-radius:99px}.hidden{display:none!important}nav{position:fixed;bottom:0;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:2px;background:#fffffff0;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 3px calc(6px + env(safe-area-inset-bottom))}nav button{flex:1;max-width:120px;background:transparent;color:var(--muted);font-size:10px;padding:6px 2px}nav button span{display:block;font-size:19px}nav button.active{background:var(--pale);color:var(--green)}.install{display:none}@media(min-width:650px){header{padding:26px;border-radius:0 0 28px 28px}.stats{grid-template-columns:repeat(4,1fr)}main{padding:22px}nav{left:calc(50% - 400px);right:calc(50% - 400px);border-radius:16px 16px 0 0}.grid{grid-template-columns:repeat(4,1fr)}}
+
+/* ======================================
+   MEU FINANCEIRO — VERDE PREMIUM
+   Camada visual; preserva a lógica atual
+   ====================================== */
+
+:root {
+  --premium-forest: #12372a;
+  --premium-green: #176b4d;
+  --premium-emerald: #21865b;
+  --premium-mint: #dff3e8;
+  --premium-bg: #f3f8f5;
+  --premium-card: #ffffff;
+  --premium-text: #192c24;
+  --premium-muted: #718078;
+  --premium-border: #e0eae4;
+  --premium-danger: #c44e52;
+  --premium-shadow: 0 5px 22px rgba(18, 55, 42, 0.055);
+}
+
+html {
+  background: var(--premium-bg);
+  color-scheme: light;
+}
+
+body {
+  background: var(--premium-bg);
+  color: var(--premium-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  color: var(--premium-text);
+  letter-spacing: -0.025em;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+input, select, textarea {
+  max-width: 100%;
+  border: 1px solid var(--premium-border);
+  border-radius: 13px;
+  background: #fff;
+  color: var(--premium-text);
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--premium-emerald);
+  box-shadow: 0 0 0 3px rgba(33, 134, 91, .12);
+}
+
+button {
+  border-radius: 13px;
+  transition: transform .16s, filter .16s, box-shadow .16s;
+}
+
+button:active {
+  transform: scale(.98);
+}
+
+.card {
+  background: var(--premium-card);
+  border: 1px solid var(--premium-border);
+  border-radius: 23px;
+  box-shadow: var(--premium-shadow);
+  padding: 20px;
+}
+
+.pill {
+  background: #e9f4ed;
+  color: var(--premium-green);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-weight: 600;
+}
+
+.muted, .muted-text {
+  color: var(--premium-muted);
+}
+
+.bar {
+  background: var(--premium-mint);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+nav, .bottom-nav, .navbar {
+  background: rgba(255, 255, 255, .97);
+  border-top: 1px solid var(--premium-border);
+}
+
+nav button, .bottom-nav button, .navbar button {
+  border-radius: 15px;
+}
+
+nav button.active,
+.bottom-nav button.active,
+.navbar button.active {
+  background: var(--premium-mint);
+  color: var(--premium-green);
+  font-weight: 700;
+}
+
+button.primary, .btn-primary, button[type="submit"] {
+  background: var(--premium-green);
+  color: #fff;
+  border: 1px solid var(--premium-green);
+  font-weight: 650;
+  box-shadow: 0 4px 12px rgba(23, 107, 77, .15);
+}
+
+button.primary:hover, .btn-primary:hover,
+button[type="submit"]:hover {
+  filter: brightness(1.06);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--premium-border);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  color: var(--premium-muted);
+  font-weight: 650;
+}
+
+td, th {
+  padding: 11px 8px;
+  border-bottom: 1px solid var(--premium-border);
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 17px;
+    border-radius: 20px;
+  }
+
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
 </style></head>
 <body>
 <header><div class="wrap"><div class="top"><div><div class="brand">🌿 Meu Financeiro 2.0</div><div class="sub" id="monthName">Gestão financeira pessoal</div></div><button class="secondary sm" onclick="page('settings')">⚙️ Definições</button></div><div class="hero"><small>Saldo do mês selecionado</small><div class="balance" id="balance">€ 0,00</div><div class="stats"><div class="stat"><span>Rendimentos</span><b id="income">€ 0,00</b></div><div class="stat"><span>Despesas</span><b id="expenses">€ 0,00</b></div><div class="stat"><span>Poupado</span><b id="saved">€ 0,00</b></div><div class="stat"><span>Dívida em aberto</span><b id="debtTotal">€ 0,00</b></div></div></div></div></header>
