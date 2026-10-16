@@ -1,5 +1,5 @@
 
-const CACHE = 'meu-financeiro-v3-shell-v1';
+const CACHE = 'meu-financeiro-v4-shell-v1';
 
 const ASSETS = [
   './',
