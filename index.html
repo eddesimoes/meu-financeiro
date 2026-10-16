@@ -220,19 +220,25 @@ td,th{padding:11px 8px;border-bottom:1px solid var(--line);text-align:left}
   .stat{padding:10px}
   input,select{font-size:16px}
 }
-/* Ajustes finos para ecrãs móveis: mês legível e navegação equilibrada */
+/* Ajustes móveis: seletor do mês e navegação sem cortes */
 #p-home > .head{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
-#p-home > .head h2{flex:1;min-width:0;margin:0}
-#dashMonth{width: min(44vw, 210px);min-width:0;max-width:48%;padding:10px 8px;font-size:14px;letter-spacing:-.25px}
+#p-home > .head h2{flex:1 1 auto;min-width:0;margin:0}
+#dashMonth{flex:0 1 44%;width:44%;min-width:0;max-width:220px;padding:10px 8px;font-size:14px;letter-spacing:-.2px}
 nav{gap:3px;padding-left:5px;padding-right:5px}
-nav button{flex:1 1 0;min-width:0;max-width:none;padding:7px 1px;font-size:clamp(9px,2.4vw,11px);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav button{flex:1 1 0;min-width:0;max-width:none;padding:7px 1px;font-size:clamp(9px,2.5vw,11px);line-height:1.15;white-space:normal;overflow:visible;text-overflow:clip}
 nav button span{font-size:19px;line-height:1.15}
-@media(max-width:380px){
-  .brand{font-size:20px}
-  #dashMonth{width:43vw;font-size:12px;padding:9px 5px}
-  nav{gap:1px;padding-left:3px;padding-right:3px}
-  nav button{font-size:8px}
-  nav button span{font-size:17px}
+@media(max-width:480px){
+  #p-home > .head{gap:8px}
+  #p-home > .head h2{font-size:clamp(19px,5.4vw,23px)}
+  #dashMonth{flex-basis:46%;width:46%;max-width:210px;padding:10px 6px;font-size:clamp(12px,3.2vw,14px)}
+  nav button{font-size:clamp(8px,2.35vw,10px);padding:7px 0;letter-spacing:-.25px}
+  nav button span{font-size:18px}
+}
+@media(max-width:360px){
+  #dashMonth{font-size:11px;padding:8px 3px}
+  nav{gap:1px;padding-left:2px;padding-right:2px}
+  nav button{font-size:8px;letter-spacing:-.4px}
+  nav button span{font-size:16px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
@@ -244,7 +250,7 @@ nav button span{font-size:19px;line-height:1.15}
 <section class="page active" id="p-home"><div class="head">
   <h2>Visão geral</h2>
   <input id="dashMonth" type="month" aria-label="Mês do dashboard"
-         onchange="render()" style="width:auto;max-width:155px">
+         onchange="render()" >
 </div>
 <div class="pill" id="monthPill" style="display:inline-block;margin-bottom:12px"></div><div class="grid"><div class="card mini"><span>Contas pendentes</span><b id="pending">0</b></div><div class="card mini"><span>Investimentos</span><b id="investTotal">€ 0,00</b></div></div><div class="card">
   <h3>Despesas por categoria</h3>
